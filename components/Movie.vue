@@ -1,11 +1,11 @@
 <template>
-    <div class="bg-green-400 p-4">
-      <div class="relative movie_img">
-        <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" alt="" class="object-cover">
+    <div class="">
+      <div class="movie_card relative overflow-hidden transition">
+        <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" alt="" class="object-cover movie_img">
         <p class="absolute top-0 left-0 px-4 py-2 bg-red-500 text-white font-bold">{{movie.vote_average}}</p>
-        <div id="movie_details hidden hover:inline" class="w-full bg-white px-2 absolute bottom-0 left-0">
+        <div id="movie_details" class="w-full p-2 absolute bottom-0 bg-red-500 text-white leading-normal transition ease-in-out duration-30 all">
           <h4 class="font-bold">{{movie.title}}</h4>
-          <small class="text-gray-500 font-regular">{{movie.release_date}}</small>
+          <small class="font-regular">{{movie.release_date}}</small>
         </div>   
       </div>
     </div>
@@ -21,5 +21,12 @@ export default {
 </script>
 
 <style>
-  
+  .movie_card:hover #movie_details {
+      transform: translateY(0);
+  }
+
+  #movie_details {
+    transform: translateY(100%);
+  }
+
 </style>
