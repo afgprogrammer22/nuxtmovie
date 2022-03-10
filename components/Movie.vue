@@ -3,11 +3,11 @@
       <div class="movie_card relative overflow-hidden transition">
         <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" alt="" class="object-cover movie_img">
         <p class="absolute top-0 left-0 px-4 py-2 bg-red-500 text-white font-bold">{{movie.vote_average}}</p>
-        <div id="movie_details" class="w-full p-2 absolute bottom-0 bg-green-500 text-white leading-normal transition ease-in-out duration-30 all text-black">
+        <div id="movie_details" class="w-full p-2 text-white absolute bottom-0 bg-red-500 leading-normal transition ease-in-out duration-30 all">
 
           <h4 class="font-bold">Movie Name: {{movie.title}}</h4>
-          <p class="font-medium">Overview: <span class="text-gray-700">{{ movie.overview.slice(0, 200) }}</span> </p>
-          <small class="font-regular">Release Date: {{movie.release_date}}</small>
+          <p class="font-medium">Overview: <span class="text-gray-200">{{ movie.overview.slice(0, 200) }}</span> </p>
+          <small class="font-regular italic">Release Date: {{movie.release_date}}</small>
         </div>   
       </div>
     </div>
