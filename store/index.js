@@ -24,7 +24,11 @@ const store = {
             try {
                 axios.get(`https://api.themoviedb.org/3/search/movie?api_key=2b0f5d1408bdc2867a97540c54783be9&languate=en-US&query=${searchText}`).then((res) => {
                     console.log(res.data.results);
-                    commit('setMovies', res.data.results);
+                    if(res.data.results) {
+                        commit('setMovies', res.data.results);
+                    } else {
+                        console.log('No MOVIES');
+                    }
                 });
             } catch (error) {
                 console.log(error);
